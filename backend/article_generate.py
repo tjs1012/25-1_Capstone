@@ -9,7 +9,7 @@ class KoBARTConditionalGeneration(pl.LightningModule):
         self.hparams.update(hparams)
         self.train_data_len = train_data_len
 
-        self.device_type = torch.device('cuda' if torch.cuda.is_available() else 'cpu') # 내가 추가
+        self.device_type = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
         # self.model = kwargs['model'].cuda()
         self.model = kwargs['model'].to(self.device_type)
@@ -41,13 +41,10 @@ class KoBARTConditionalGeneration(pl.LightningModule):
         # num_workers = gpus * num_nodes
         # data_len = len(self.train_dataloader().dataset)
         data_len = self.train_data_len
-        print(f'학습 데이터 양: {data_len}')
 
         num_train_steps = int(data_len / self.hparams.batch_size * self.hparams.max_epochs)
-        print(f'Step 수: {num_train_steps}')
 
         num_warmup_steps = int(num_train_steps * self.hparams.warmup_ratio)
-        print(f'Warmup Step 수: {num_warmup_steps}')
 
         scheduler = get_cosine_schedule_with_warmup(
             optimizer,
@@ -105,7 +102,7 @@ class KoBARTConditionalGeneration(pl.LightningModule):
             tokens,
             max_length = self.hparams.max_length,
             attention_mask = attention_mask,
-            num_beams = 10 # 	여러 후보를 고려하여 가장 좋은 결과를 선택하는 방식
+            num_beams = 10 # 여러 후보를 고려하여 가장 좋은 결과를 선택하는 방식
         )[0]
 
         a = self.tokenizer.decode(result)
