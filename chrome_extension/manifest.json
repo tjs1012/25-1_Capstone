@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Clickbait Rewriter",
+  "version": "1.0",
+  "permissions": ["activeTab", "scripting", "tabs"],
+  "action": {
+    "default_title": "Rewriter 활성화",
+    "default_icon": "clickbait_icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "128": "clickbait_icon.png"
+  }
+}
