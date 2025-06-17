@@ -1,4 +1,4 @@
-# 클릭베이트 기사 탐지 및 신뢰할 수 있는 대체 제목 생성 서비스
+# 클릭베이트 기사 탐지 및 신뢰할 수 있는 기사 제목 생성 서비스
 <p align="center">
   <img src="https://github.com/user-attachments/assets/fa31da3c-f73e-4e66-934d-733759ade9de" alt="clickbait_icon" width="300">
 </p>
