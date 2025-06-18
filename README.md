@@ -26,7 +26,7 @@
 - 클릭베이트 탐지 결과와 새로 생성한 기사 제목을 기존 제목과 함께 사용자 웹페이지에 표시<br>
 
 # ⚙️ 서비스 아키텍처
-![image](https://github.com/user-attachments/assets/99795730-4966-4fda-ab0e-b14e48ab5c1e)
+![image](https://github.com/user-attachments/assets/337eb3b3-2f2f-4ae7-acd4-6b51f828fafa)
 
 
 # 🎥 데모 영상
